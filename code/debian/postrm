@@ -1,0 +1,21 @@
+#!/bin/sh
+set -e
+
+case "$1" in
+    remove|purge)
+        rm -f /etc/xdg/autostart/mk96-app-debian-rocket-tool.desktop
+        ;;
+esac
+
+case "$1" in
+    purge)
+        if [ -e /usr/share/debconf/confmodule ]; then
+            . /usr/share/debconf/confmodule
+            db_purge
+        fi
+        ;;
+esac
+
+#DEBHELPER#
+
+exit 0

@@ -1,0 +1,2 @@
+#!/bin/sh
+exec python3 -m mk96_app_debian_rocket_tool.app "$@"

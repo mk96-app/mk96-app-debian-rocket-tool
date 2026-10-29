@@ -1,0 +1,26 @@
+#!/bin/sh
+set -e
+
+. /usr/share/debconf/confmodule
+
+AUTOSTART_DIR=/etc/xdg/autostart
+AUTOSTART_FILE="$AUTOSTART_DIR/mk96-app-debian-rocket-tool.desktop"
+DESKTOP_SOURCE=/usr/share/applications/mk96-app-debian-rocket-tool.desktop
+
+case "$1" in
+    configure)
+        db_get mk96-app-debian-rocket-tool/autostart
+        if [ "$RET" = "Si" ]; then
+            mkdir -p "$AUTOSTART_DIR"
+            cp "$DESKTOP_SOURCE" "$AUTOSTART_FILE"
+        else
+            rm -f "$AUTOSTART_FILE"
+        fi
+        ;;
+esac
+
+db_stop
+
+#DEBHELPER#
+
+exit 0

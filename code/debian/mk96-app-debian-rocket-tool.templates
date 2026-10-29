@@ -1,0 +1,10 @@
+Template: mk96-app-debian-rocket-tool/autostart
+Type: select
+Choices: Si, No
+Default: Si
+Description: ¿Iniciar MK96 Debian Rocket Tool automáticamente al iniciar sesión?
+ MK96 Debian Rocket Tool es un applet de bandeja de sistema que avisa con sonidos
+ distintivos de mensajes especiales de Rocket.Chat. Si activas esta opción se
+ instalará una entrada de autoarranque de escritorio (XDG autostart) para que el
+ icono aparezca solo tras iniciar sesión, sin tener que abrirlo a mano. Se puede
+ cambiar más adelante con: sudo dpkg-reconfigure mk96-app-debian-rocket-tool.

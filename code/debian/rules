@@ -1,0 +1,16 @@
+#!/usr/bin/make -f
+
+%:
+	dh $@
+
+override_dh_auto_test:
+	python3 -m pytest
+
+override_dh_auto_clean:
+	dh_auto_clean
+	find mk96_app_debian_rocket_tool -type d -name __pycache__ -exec rm -rf {} +
+
+override_dh_install:
+	dh_install
+	find debian/mk96-app-debian-rocket-tool/usr/lib/python3/dist-packages/mk96_app_debian_rocket_tool \
+		-type d -name __pycache__ -exec rm -rf {} +

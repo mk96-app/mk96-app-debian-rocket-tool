@@ -1,0 +1,17 @@
+Source: mk96-app-debian-rocket-tool
+Section: net
+Priority: optional
+Maintainer: Andrés <132230860+Markes96@users.noreply.github.com>
+Build-Depends: debhelper-compat (= 13), python3-pytest, python3-yaml
+Standards-Version: 4.6.2
+Rules-Requires-Root: no
+
+Package: mk96-app-debian-rocket-tool
+Architecture: all
+Depends: ${misc:Depends}, python3-gi, gir1.2-ayatanaappindicator3-0.1, gir1.2-secret-1, python3-yaml
+Description: Applet de bandeja con sonidos distintivos por chat de Rocket.Chat
+ Panel de bandeja (AppIndicator) que se conecta a un servidor Rocket.Chat propio
+ y asigna sonidos distintivos a salas/DMs concretos y a las menciones, para
+ reconocer por el oído de quién llega una notificación sin mirar la pantalla.
+ Incluye una ventana de solo lectura del historial de cada sala con respuesta
+ simple de una línea.

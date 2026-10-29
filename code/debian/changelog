@@ -1,0 +1,118 @@
+mk96-app-debian-rocket-tool (26-10-1) unstable; urgency=medium
+
+  * Primera publicación en GitHub. Sin cambios funcionales respecto a la 1.0.0.
+    Nuevo esquema de versión AA-M-R (año-mes-release). El paquete, el comando y
+    el módulo pasan a llamarse mk96-app-debian-rocket-tool (antes mk-debian-roket-driver).
+
+ -- Andrés <132230860+Markes96@users.noreply.github.com>  Thu, 29 Oct 2026 16:22:02 +0100
+
+mk-debian-roket-driver (1.0.0) unstable; urgency=medium
+
+  * Primera versión estable. Sin cambios funcionales respecto a la 0.6.0: se
+    da por madura la aplicación (varios servidores Rocket.Chat con sonidos por
+    sala y mención, No molestar y horario silencioso, calendario de reuniones
+    con recordatorios, herramientas de presencia y marcado como leído, y una
+    única ventana de Configuración con pestañas).
+
+ -- Andrés <132230860+Markes96@users.noreply.github.com>  Tue, 13 Oct 2026 18:30:00 +0200
+
+mk-debian-roket-driver (0.6.0) unstable; urgency=medium
+
+  * Servidores, Alertas y Reuniones se unen en una única ventana
+    "Configuración" con tres pestañas. Servidores es la pestaña que se abre
+    por defecto. El menú de la bandeja pasa a tener una sola entrada,
+    "Configuración...", en lugar de "Reuniones...", "Alertas..." y
+    "Servidores...".
+  * Menú de la bandeja: el submenú "Chats" pasa a llamarse "Alertas" y
+    "Próximas reuniones" pasa a "Reuniones". Ambos terminan con un acceso
+    directo ("⚙ Configurar alertas..." / "⚙ Configurar reuniones...") que abre
+    Configuración en su pestaña. Los dos submenús se muestran siempre.
+  * Herramientas: "Todos como leídos" y "No configurados como leídos" se
+    sustituyen por una sola entrada, "Marcar como leído...", que pregunta en
+    un diálogo si marcar todos, solo los no configurados o cancelar.
+
+ -- Andrés <132230860+Markes96@users.noreply.github.com>  Tue, 13 Oct 2026 17:00:00 +0200
+
+mk-debian-roket-driver (0.5.0) unstable; urgency=medium
+
+  * Los ajustes se separan en dos ventanas: "Servidores..." (alta y conexión de
+    servidores, arranque automático) y "Alertas..." (reglas de sonido por
+    servidor y horario silencioso). "Configuración..." desaparece del menú de
+    la bandeja.
+  * Ventana Servidores: cada campo lleva su etiqueta, nuevo botón "Probar
+    conexión" (comprueba URL, User Id y token sin guardar, con el resultado en
+    pantalla), ojo para mostrar/ocultar el token y "Inicio automático"
+    (con su explicación al pasar el ratón).
+  * El estado de conexión se ve siempre: la primera línea del menú de la
+    bandeja muestra "Conectado: @usuario" o el error, y la ventana
+    Servidores muestra "Conexión abierta:" con el usuario debajo mientras haya
+    conexión, "Conexión cerrada" en gris si no la hay, o el motivo del fallo.
+  * Ventana Servidores con los botones reordenados: Conectar/Desconectar con el
+    estado a su derecha arriba; bajo un separador, "Probar conexión" con su
+    resultado, y Guardar (verde) y Eliminar servidor (rojo, con confirmación)
+    debajo; "Inicio automático" bajo "Añadir servidor" con su propio separador.
+  * Ventana Alertas en dos pantallas: la lista de alertas del servidor (con
+    Editar y Quitar en rojo) y un diálogo para añadir o editar una alerta con
+    Cancelar y Guardar. La mención global va arriba en su propia tarjeta
+    (solo puede haber una por servidor) y "No molestar" queda siempre visible
+    aunque se reduzca la ventana. Si ya existe una alerta para una sala, se
+    avisa en vez de sobrescribirla.
+  * Ventana Reuniones solo con el calendario (Semana por defecto, con tamaño
+    para ver el día, la semana o el mes completos) y un diálogo para crear o
+    editar reuniones con Cancelar, Guardar y Borrar. Calendario renovado: marca
+    roja de la hora actual exacta al minuto, hoy resaltado, bloques de color
+    con detalle al pasar el ratón, reuniones inactivas en gris, celdas con
+    borde en el mes y "+N más" que salta a la vista Día.
+  * Reuniones: clic izquierdo (arrastrando) selecciona una franja y clic
+    derecho abre el menú de hueco o de reunión (añadir con esa hora y duración;
+    editar, activar/desactivar, eliminar). En una serie, eliminar o desactivar
+    pregunta si afecta solo a esa ocurrencia o a toda la serie. Las reuniones
+    que coinciden en hora se muestran lado a lado sin bloquear nada.
+
+ -- Andrés <132230860+Markes96@users.noreply.github.com>  Tue, 13 Oct 2026 16:00:00 +0200
+
+mk-debian-roket-driver (0.4.0) unstable; urgency=medium
+
+  * Varios servidores Rocket.Chat conectados a la vez (un polling por servidor).
+  * Modo No molestar: silencio manual (1 h, 4 h, indefinido) desde la bandeja y
+    horario silencioso configurable en Ajustes. Los chats siguen apareciendo en
+    la bandeja; los recordatorios de reuniones no se silencian.
+  * Arranque automático con la sesión, activable en Ajustes.
+  * La regla de mención puede incluir también @all y @here.
+  * Robustez: las peticiones de red ya no bloquean la interfaz (hilo aparte);
+    el historial se pagina para no perder ráfagas de más de 50 mensajes; un
+    fallo de red reintenta con backoff y se avisa una sola vez; un token
+    revocado (401) se avisa en vez de reintentar sin fin; las salas cuyo
+    historial falla se reintentan; aviso al usar http:// sin cifrar.
+
+ -- Andrés <132230860+Markes96@users.noreply.github.com>  Tue, 13 Oct 2026 14:00:00 +0200
+
+mk-debian-roket-driver (0.3.0) unstable; urgency=medium
+
+  * Vistas de calendario Día/Semana/Mes para las reuniones, con duración y
+    botones de borrar y abrir enlace en el formulario.
+  * Nuevo submenú "Herramientas" en la bandeja: marcar todos los chats como
+    leídos, o solo los no configurados (sin regla de sala activa), con
+    notificación del resultado.
+  * Herramientas: cambiar el estado de presencia (disponible, ausente,
+    ocupado, invisible) y abrir la carpeta de sonidos propios.
+
+ -- Andrés <132230860+Markes96@users.noreply.github.com>  Tue, 13 Oct 2026 12:00:00 +0200
+
+mk-debian-roket-driver (0.2.0) unstable; urgency=medium
+
+  * Añade recordatorios de reuniones/calendario local: alta de reuniones con
+    repetición (ninguna/diaria/semanal/mensual), aviso previo configurable,
+    sonido y notificación de escritorio, integración en la bandeja.
+
+ -- Andrés <132230860+Markes96@users.noreply.github.com>  Tue, 18 Aug 2026 12:00:00 +0200
+
+mk-debian-roket-driver (0.1.0) unstable; urgency=medium
+
+  * Primera versión: applet de bandeja que se conecta a la Realtime API de
+    Rocket.Chat y asigna sonidos distintivos por sala/DM y por mención global,
+    con ventana de historial de solo lectura y respuesta simple. Credenciales
+    en Secret Service (libsecret), sonidos personalizados persistentes en
+    ~/.local/share/mk-debian-roket-driver/sounds/custom/.
+
+ -- Andrés <132230860+Markes96@users.noreply.github.com>  Thu, 13 Aug 2026 20:47:00 +0200

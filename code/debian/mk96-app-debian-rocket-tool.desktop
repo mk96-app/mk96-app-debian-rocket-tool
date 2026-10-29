@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=MK96 Debian Rocket Tool
+Comment=Sonidos distintivos para chats especiales de Rocket.Chat
+Exec=mk96-app-debian-rocket-tool
+Icon=mk96-app-debian-rocket-tool
+Terminal=false
+Categories=Network;InstantMessaging;
+X-GNOME-Autostart-enabled=true

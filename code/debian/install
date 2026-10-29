@@ -1,0 +1,4 @@
+mk96_app_debian_rocket_tool usr/lib/python3/dist-packages/
+debian/mk96-app-debian-rocket-tool.desktop usr/share/applications/
+debian/icons/mk96-app-debian-rocket-tool.svg usr/share/icons/hicolor/scalable/apps/
+debian/scripts/mk96-app-debian-rocket-tool usr/bin/

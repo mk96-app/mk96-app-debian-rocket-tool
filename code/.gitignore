@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+debian/.debhelper/
+debian/mk96-app-debian-rocket-tool/
+debian/mk96-app-debian-rocket-tool.debhelper.log
+debian/mk96-app-debian-rocket-tool.substvars
+debian/mk96-app-debian-rocket-tool.postrm.debhelper
+debian/debhelper-build-stamp
+debian/files
